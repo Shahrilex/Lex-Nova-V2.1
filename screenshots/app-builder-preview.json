@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Jurist Assistant",
+      "hasCanvas": false,
+      "bodyTextLen": 182,
+      "bodyTextHash": "5c838076923d553bcd9d65b6fc35a795d809f4cfeb17d28b5deb0b1434386fae",
+      "bodyTextPrefix": "Jurist Assistant دستیار حقوقدان · مدیریت دفتر وکالت شماره موبایل",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Jurist Assistant",
+      "hasCanvas": false,
+      "bodyTextLen": 182,
+      "bodyTextHash": "5c838076923d553bcd9d65b6fc35a795d809f4cfeb17d28b5deb0b1434386fae",
+      "bodyTextPrefix": "Jurist Assistant دستیار حقوقدان · مدیریت دفتر وکالت شماره موبایل",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
