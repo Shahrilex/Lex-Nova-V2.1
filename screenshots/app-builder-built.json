@@ -1,0 +1,49 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Jurist Assistant",
+      "hasCanvas": false,
+      "bodyTextLen": 182,
+      "bodyTextHash": "5c838076923d553bcd9d65b6fc35a795d809f4cfeb17d28b5deb0b1434386fae",
+      "bodyTextPrefix": "Jurist Assistant دستیار حقوقدان · مدیریت دفتر وکالت شماره موبایل",
+      "horizontalOverflow": false,
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 () (http://127.0.0.1:8081/assets/styles-jBOCYonp.css)",
+        "Failed to load resource: the server responded with a status of 404 () (http://127.0.0.1:8081/assets/index-BMOK9jxp.js)",
+        "Failed to load resource: net::ERR_NETWORK_ACCESS_DENIED (https://grok.com/grok-app-builder/extensions.js)",
+        "Failed to load resource: the server responded with a status of 404 () (http://127.0.0.1:8081/favicon.svg)"
+      ],
+      "pageErrors": [],
+      "screenshot": "D:\\Github\\Lex-Nova-V2.1\\screenshots\\app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Jurist Assistant",
+      "hasCanvas": false,
+      "bodyTextLen": 182,
+      "bodyTextHash": "5c838076923d553bcd9d65b6fc35a795d809f4cfeb17d28b5deb0b1434386fae",
+      "bodyTextPrefix": "Jurist Assistant دستیار حقوقدان · مدیریت دفتر وکالت شماره موبایل",
+      "horizontalOverflow": false,
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 () (http://127.0.0.1:8081/assets/styles-jBOCYonp.css)",
+        "Failed to load resource: the server responded with a status of 404 () (http://127.0.0.1:8081/assets/index-BMOK9jxp.js)",
+        "Failed to load resource: net::ERR_NETWORK_ACCESS_DENIED (https://grok.com/grok-app-builder/extensions.js)"
+      ],
+      "pageErrors": [],
+      "screenshot": "D:\\Github\\Lex-Nova-V2.1\\screenshots\\app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [
+    "BRAND NOTE: no custom public/og.jpg — the platform will serve the og.grok.me placeholder. Custom cards are the default for games of every kind (DOM board/word games included), whimsical apps, creative tools, and brand-forward pages — only plain utilities (converters, CRUD trackers, admin dashboards) keep the placeholder. If this app is not a plain utility, finish the brand-asset pass per \\workspace\\.grok\\skills\\og\\SKILL.md."
+  ],
+  "authWarnings": [],
+  "verdictFile": "D:\\Github\\Lex-Nova-V2.1\\screenshots\\app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}

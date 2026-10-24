@@ -81,6 +81,7 @@ const groups: {
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const user = useApp((s) => s.user);
+  const office = useApp((s) => s.office);
   const hydrated = useApp((s) => s.hydrated);
   const setHydrated = useApp((s) => s.setHydrated);
   const logout = useApp((s) => s.logout);
@@ -176,7 +177,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           ))}
         </nav>
         <div className="border-t border-paper/10 p-4">
-          <div className="text-sm font-medium">{user.fullName}</div>
+          <div className="text-sm font-medium">{office.name}</div>
           <div className="text-xs text-paper/55">
             {user.role} · پلن {planLabel[user.plan]}
           </div>

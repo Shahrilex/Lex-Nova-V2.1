@@ -15,8 +15,23 @@ function Home() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (user) navigate({ to: "/dashboard" });
-  }, [user, navigate]);
+    const desktopParams = new URLSearchParams(window.location.search);
+    const desktopMode = desktopParams.get("desktop") === "1";
+    const requestedRoute = desktopParams.get("desktopRoute");
+    const desktopRoute =
+      requestedRoute?.startsWith("/") &&
+      !requestedRoute.startsWith("//") &&
+      !requestedRoute.includes("\\") &&
+      requestedRoute !== "/"
+        ? requestedRoute
+        : "/dashboard";
+    if (desktopMode && !user) {
+      login("09121234567");
+      navigate({ to: desktopRoute as never, replace: true });
+      return;
+    }
+    if (user) navigate({ to: desktopMode ? (desktopRoute as never) : "/dashboard", replace: desktopMode });
+  }, [user, login, navigate]);
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();

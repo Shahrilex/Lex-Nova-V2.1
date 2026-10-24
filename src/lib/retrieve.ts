@@ -97,7 +97,7 @@ export function matchDeadlineRule(query: string): DeadlineRule | undefined {
 }
 
 export function extractNoticeDate(query: string) {
-  const m = query.match(/(\d{4}[\/\-]\d{1,2}[\/\-]\d{1,2})|([۰-۹]{4}[\/\-][۰-۹]{1,2}[\/\-][۰-۹]{1,2})/);
+  const m = query.match(/(\d{4}[/-]\d{1,2}[/-]\d{1,2})|([۰-۹]{4}[/-][۰-۹]{1,2}[/-][۰-۹]{1,2})/);
   if (!m) return null;
   return parseJalali(m[0]) ? m[0] : null;
 }

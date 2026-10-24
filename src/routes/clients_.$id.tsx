@@ -1,6 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
+import { useShallow } from "zustand/react/shallow";
+import { useNavigate } from "@tanstack/react-router";
 import { AppShell } from "@/components/AppShell";
+import { Attachments } from "@/components/Attachments";
 import { StatusBadge } from "@/components/Badges";
 import { PageHeader } from "@/components/PageHeader";
 import { useApp } from "@/lib/store";
@@ -10,8 +13,11 @@ export const Route = createFileRoute("/clients_/$id")({ component: ClientDetail 
 function ClientDetail() {
   const { id } = Route.useParams();
   const client = useApp((s) => s.clients.find((c) => c.id === id));
-  const cases = useApp((s) => s.cases.filter((c) => c.clientId === id));
+  const cases = useApp(useShallow((s) => s.cases.filter((c) => c.clientId === id)));
   const updateClient = useApp((s) => s.updateClient);
+  const deleteClient = useApp((s) => s.deleteClient);
+  const updateClientAttachments = useApp((s) => s.updateClientAttachments);
+  const navigate = useNavigate();
   const [editing, setEditing] = useState(false);
   const [fullName, setFullName] = useState(client?.fullName ?? "");
   const [mobile, setMobile] = useState(client?.mobile ?? "");
@@ -83,6 +89,12 @@ function ClientDetail() {
       {client.notes && !editing && (
         <div className="mb-6 rounded-xl border border-line bg-surface p-4 text-sm">{client.notes}</div>
       )}
+      <div className="mb-6"><Attachments files={client.attachments ?? []} onChange={(attachments) => updateClientAttachments(id, attachments)} /></div>
+      <div className="mb-6 flex justify-end">
+        <button type="button" disabled={cases.length > 0} title={cases.length ? "ابتدا پرونده‌های مرتبط را حذف یا منتقل کنید." : undefined} onClick={() => {
+          if (window.confirm(`موکل «${client.fullName}» حذف شود؟`)) { deleteClient(id); navigate({ to: "/clients" }); }
+        }} className="h-10 rounded-md border border-danger px-4 text-sm text-danger disabled:opacity-40">حذف موکل</button>
+      </div>
       <h2 className="mb-3 font-semibold text-navy">پرونده‌ها</h2>
       <div className="space-y-2">
         {cases.length === 0 && <p className="text-sm text-muted">پرونده‌ای ثبت نشده است.</p>}

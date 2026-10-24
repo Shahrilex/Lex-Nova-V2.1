@@ -1,0 +1,6 @@
+2026/10/17-07:20:44.855 3a5c Reusing MANIFEST D:\Github\Lex-Nova-V2.1\desktop\LexNova.Desktop\bin\Release\net8.0-windows\LexNova.Desktop.exe.WebView2\EBWebView\Default\IndexedDB\http_127.0.0.1_8080.indexeddb.leveldb/MANIFEST-000001
+2026/10/17-07:20:44.855 3a5c Recovering log #3
+2026/10/17-07:20:44.861 3a5c Reusing old log D:\Github\Lex-Nova-V2.1\desktop\LexNova.Desktop\bin\Release\net8.0-windows\LexNova.Desktop.exe.WebView2\EBWebView\Default\IndexedDB\http_127.0.0.1_8080.indexeddb.leveldb/000003.log 
+2026/10/17-07:20:44.881 39dc Level-0 table #5: started
+2026/10/17-07:20:44.902 39dc Level-0 table #5: 1315572 bytes OK
+2026/10/17-07:20:44.905 39dc Delete type=0 #3

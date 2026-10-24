@@ -1,0 +1,93 @@
+Error: aborted
+    at abortIncoming (node:_http_server:921:17)
+    ... 2 lines matching cause stack trace ...
+    at TCP.<anonymous> (node:net:362:12) {
+  cause: Error: aborted
+      at abortIncoming (node:_http_server:921:17)
+      at socketOnClose (node:_http_server:914:3)
+      at Socket.emit (node:events:526:24)
+      at TCP.<anonymous> (node:net:362:12) {
+    code: 'ECONNRESET'
+  },
+  status: 500,
+  statusText: undefined,
+  headers: undefined,
+  data: undefined,
+  body: undefined,
+  unhandled: true
+}
+۱۹:۰۸:۱۳ [vite] (client) [console.error] TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:8080/src/routes/reports.tsx?tsr-split=component
+
+The above error occurred in the <Lazy> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.
+
+۱۹:۰۸:۱۳ [vite] (client) [console.warn] Warning: Error in route match: /reports/reports
+۱۹:۰۸:۱۴ [vite] (client) [console.error] TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:8080/src/routes/reports.tsx?tsr-split=component
+
+The above error occurred in the <Lazy> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.
+
+۱۹:۰۸:۱۴ [vite] (client) [console.warn] Warning: Error in route match: /reports/reports
+۱۹:۰۸:۱۶ [vite] (client) [console.error] TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:8080/src/routes/reports.tsx?tsr-split=component
+
+The above error occurred in the <Lazy> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.
+
+۱۹:۰۸:۱۶ [vite] (client) [console.warn] Warning: Error in route match: /reports/reports
+۱۹:۰۸:۳۱ [vite] (client) [console.error] The result of getSnapshot should be cached to avoid an infinite loop
+۱۹:۰۸:۳۲ [vite] (client) [console.error] Error: Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.
+    at getRootForUpdatedFiber (http://127.0.0.1:8080/node_modules/.vite/deps/react-dom_client.js?v=70d1893b:2786:166)
+    at enqueueConcurrentRenderForLane (http://127.0.0.1:8080/node_modules/.vite/deps/react-dom_client.js?v=70d1893b:2776:11)
+    at forceStoreRerender (http://127.0.0.1:8080/node_modules/.vite/deps/react-dom_client.js?v=70d1893b:4772:15)
+    at updateStoreInstance (http://127.0.0.1:8080/node_modules/.vite/deps/react-dom_client.js?v=70d1893b:4754:36)
+    at Object.react_stack_bottom_frame (http://127.0.0.1:8080/node_modules/.vite/deps/react-dom_client.js?v=70d1893b:14178:13)
+    at runWithFiberInDEV (http://127.0.0.1:8080/node_modules/.vite/deps/react-dom_client.js?v=70d1893b:944:66)
+    at commitHookEffectListMount (http://127.0.0.1:8080/node_modules/.vite/deps/react-dom_client.js?v=70d1893b:6901:153)
+    at commitHookPassiveMountEffects (http://127.0.0.1:8080/node_modules/.vite/deps/react-dom_client.js?v=70d1893b:6936:55)
+    at commitPassiveMountOnFiber (http://127.0.0.1:8080/node_modules/.vite/deps/react-dom_client.js?v=70d1893b:8313:22)
+    at recursivelyTraversePassiveMountEffects (http://127.0.0.1:8080/node_modules/.vite/deps/react-dom_client.js?v=70d1893b:8300:313)
+
+The above error occurred in the <ClientDetail> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.
+
+۱۹:۰۸:۳۲ [vite] (client) [console.warn] Warning: Error in route match: /clients_/$id/clients/c1
+۱۹:۰۸:۳۴ [vite] (client) [console.error] The result of getServerSnapshot should be cached to avoid an infinite loop
+۱۹:۰۸:۳۴ [vite] (client) [console.error] Error: Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.
+    at getRootForUpdatedFiber (http://127.0.0.1:8080/node_modules/.vite/deps/react-dom_client.js?v=70d1893b:2786:166)
+    at enqueueConcurrentRenderForLane (http://127.0.0.1:8080/node_modules/.vite/deps/react-dom_client.js?v=70d1893b:2776:11)
+    at forceStoreRerender (http://127.0.0.1:8080/node_modules/.vite/deps/react-dom_client.js?v=70d1893b:4772:15)
+    at updateStoreInstance (http://127.0.0.1:8080/node_modules/.vite/deps/react-dom_client.js?v=70d1893b:4754:36)
+    at Object.react_stack_bottom_frame (http://127.0.0.1:8080/node_modules/.vite/deps/react-dom_client.js?v=70d1893b:14178:13)
+    at runWithFiberInDEV (http://127.0.0.1:8080/node_modules/.vite/deps/react-dom_client.js?v=70d1893b:944:66)
+    at commitHookEffectListMount (http://127.0.0.1:8080/node_modules/.vite/deps/react-dom_client.js?v=70d1893b:6901:153)
+    at commitHookPassiveMountEffects (http://127.0.0.1:8080/node_modules/.vite/deps/react-dom_client.js?v=70d1893b:6936:55)
+    at commitPassiveMountOnFiber (http://127.0.0.1:8080/node_modules/.vite/deps/react-dom_client.js?v=70d1893b:8313:22)
+    at recursivelyTraversePassiveMountEffects (http://127.0.0.1:8080/node_modules/.vite/deps/react-dom_client.js?v=70d1893b:8300:313)
+
+The above error occurred in the <ClientDetail> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.
+
+۱۹:۰۸:۳۴ [vite] (client) [console.warn] Warning: Error in route match: /clients_/$id/clients/c1
+۱۹:۰۸:۳۸ [vite] (client) [console.error] The result of getServerSnapshot should be cached to avoid an infinite loop
+۱۹:۰۸:۳۸ [vite] (client) [console.error] Error: Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.
+    at getRootForUpdatedFiber (http://127.0.0.1:8080/node_modules/.vite/deps/react-dom_client.js?v=70d1893b:2786:166)
+    at enqueueConcurrentRenderForLane (http://127.0.0.1:8080/node_modules/.vite/deps/react-dom_client.js?v=70d1893b:2776:11)
+    at forceStoreRerender (http://127.0.0.1:8080/node_modules/.vite/deps/react-dom_client.js?v=70d1893b:4772:15)
+    at updateStoreInstance (http://127.0.0.1:8080/node_modules/.vite/deps/react-dom_client.js?v=70d1893b:4754:36)
+    at Object.react_stack_bottom_frame (http://127.0.0.1:8080/node_modules/.vite/deps/react-dom_client.js?v=70d1893b:14178:13)
+    at runWithFiberInDEV (http://127.0.0.1:8080/node_modules/.vite/deps/react-dom_client.js?v=70d1893b:944:66)
+    at commitHookEffectListMount (http://127.0.0.1:8080/node_modules/.vite/deps/react-dom_client.js?v=70d1893b:6901:153)
+    at commitHookPassiveMountEffects (http://127.0.0.1:8080/node_modules/.vite/deps/react-dom_client.js?v=70d1893b:6936:55)
+    at commitPassiveMountOnFiber (http://127.0.0.1:8080/node_modules/.vite/deps/react-dom_client.js?v=70d1893b:8313:22)
+    at recursivelyTraversePassiveMountEffects (http://127.0.0.1:8080/node_modules/.vite/deps/react-dom_client.js?v=70d1893b:8300:313)
+
+The above error occurred in the <ClientDetail> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.
+
+۱۹:۰۸:۳۸ [vite] (client) [console.warn] Warning: Error in route match: /clients_/$id/clients/c1

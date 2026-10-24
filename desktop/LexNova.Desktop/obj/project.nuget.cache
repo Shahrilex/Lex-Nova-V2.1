@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "RbQTMOtYCPk=",
+  "success": true,
+  "projectFilePath": "D:\\Github\\Lex-Nova-V2.1\\desktop\\LexNova.Desktop\\LexNova.Desktop.csproj",
+  "expectedPackageFiles": [
+    "D:\\Github\\Lex-Nova-V2.1\\artifacts\\.dotnet-home\\.nuget\\packages\\microsoft.web.webview2\\1.0.3065.39\\microsoft.web.webview2.1.0.3065.39.nupkg.sha512",
+    "D:\\Github\\Lex-Nova-V2.1\\artifacts\\.dotnet-home\\.nuget\\packages\\system.configuration.configurationmanager\\9.0.0\\system.configuration.configurationmanager.9.0.0.nupkg.sha512",
+    "D:\\Github\\Lex-Nova-V2.1\\artifacts\\.dotnet-home\\.nuget\\packages\\system.diagnostics.eventlog\\9.0.0\\system.diagnostics.eventlog.9.0.0.nupkg.sha512",
+    "D:\\Github\\Lex-Nova-V2.1\\artifacts\\.dotnet-home\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.0\\system.security.cryptography.protecteddata.9.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

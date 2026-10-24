@@ -449,7 +449,7 @@ export const planLabel: Record<string, string> = {
 };
 
 export const seedOffice: OfficeProfile = {
-  name: "دفتر وکالت رضایی",
+  name: "دفتر وکالت شهری",
   lawyerName: "مهدی رضایی",
   address: "تهران، خیابان کریمخان زند، پلاک ۴۸",
   phone: "02188881234",

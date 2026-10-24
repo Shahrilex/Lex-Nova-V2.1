@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Github\\Lex-Nova-V2.1\\desktop\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C1F6F84D-074A-4A5D-BFF0-4B610EFD4A6D}|LexNova.Desktop\\LexNova.Desktop.csproj|d:\\github\\lex-nova-v2.1\\desktop\\lexnova.desktop\\lexnova.desktop.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C1F6F84D-074A-4A5D-BFF0-4B610EFD4A6D}|LexNova.Desktop\\LexNova.Desktop.csproj|solutionrelative:lexnova.desktop\\lexnova.desktop.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LexNova.Desktop",
+              "DocumentMoniker": "D:\\Github\\Lex-Nova-V2.1\\desktop\\LexNova.Desktop\\LexNova.Desktop.csproj",
+              "RelativeDocumentMoniker": "LexNova.Desktop\\LexNova.Desktop.csproj",
+              "ToolTip": "D:\\Github\\Lex-Nova-V2.1\\desktop\\LexNova.Desktop\\LexNova.Desktop.csproj",
+              "RelativeToolTip": "LexNova.Desktop\\LexNova.Desktop.csproj",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-10-03T23:29:27.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

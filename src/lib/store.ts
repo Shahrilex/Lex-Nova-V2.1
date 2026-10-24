@@ -1,8 +1,9 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { createJSONStorage, persist } from "zustand/middleware";
 import type {
   CaseItem,
   Client,
+  FileAttachment,
   CounselTurn,
   DeadlineItem,
   DocumentItem,
@@ -33,6 +34,8 @@ import {
   seedTransactions,
 } from "./seed";
 import { nowTime, todayJalali, uid } from "./utils";
+import type { LexNovaBackup } from "./backup";
+import { indexedDbStorage } from "./indexed-storage";
 
 type AppState = {
   hydrated: boolean;
@@ -58,23 +61,32 @@ type AppState = {
   logout: () => void;
   addClient: (data: Omit<Client, "id" | "createdAt">) => { ok: boolean; message: string; id?: string };
   updateClient: (id: string, data: Partial<Client>) => void;
+  deleteClient: (id: string) => void;
+  updateClientAttachments: (id: string, attachments: FileAttachment[]) => void;
   addCase: (data: Omit<CaseItem, "id">) => string;
   updateCase: (id: string, data: Partial<CaseItem>) => void;
+  updateCaseAttachments: (id: string, attachments: FileAttachment[]) => void;
+  deleteCase: (id: string) => void;
   addParty: (data: Omit<Party, "id">) => void;
   addDeadline: (data: Omit<DeadlineItem, "id" | "isCompleted">) => void;
   toggleDeadline: (id: string) => void;
   addTimeline: (caseId: string, title: string, description: string, type: TimelineEvent["type"]) => void;
   addNote: (caseId: string, body: string) => void;
-  addDocument: (caseId: string, title: string, kind: string) => void;
+  addDocument: (caseId: string, title: string, kind: string, attachment?: DocumentItem["attachment"]) => void;
+  deleteDocument: (id: string) => void;
+  updateDocument: (id: string, data: Partial<DocumentItem>) => void;
   addTransaction: (data: Omit<Transaction, "id">) => void;
   savePetition: (data: Omit<PetitionDraft, "id" | "updatedAt"> & { id?: string }) => string;
   addHearing: (data: Omit<Hearing, "id">) => void;
   updateHearing: (id: string, data: Partial<Hearing>) => void;
   addMember: (data: Omit<Member, "id">) => void;
+  updateMember: (id: string, data: Partial<Member>) => void;
+  deleteMember: (id: string) => void;
   markNotice: (id: string) => void;
   pushChat: (turn: CounselTurn) => void;
   clearChat: () => void;
   updateOffice: (data: Partial<OfficeProfile>) => void;
+  restoreBackup: (backup: LexNovaBackup) => void;
   resetDemo: () => void;
 };
 
@@ -144,6 +156,8 @@ export const useApp = create<AppState>()(
         set((s) => ({
           clients: s.clients.map((c) => (c.id === id ? { ...c, ...data } : c)),
         })),
+      deleteClient: (id) => set((s) => ({ clients: s.clients.filter((c) => c.id !== id) })),
+      updateClientAttachments: (id, attachments) => set((s) => ({ clients: s.clients.map((c) => c.id === id ? { ...c, attachments } : c) })),
       addCase: (data) => {
         const id = uid();
         const client = get().clients.find((c) => c.id === data.clientId);
@@ -181,6 +195,19 @@ export const useApp = create<AppState>()(
         set((s) => ({
           cases: s.cases.map((c) => (c.id === id ? { ...c, ...data } : c)),
         })),
+      updateCaseAttachments: (id, attachments) => set((s) => ({ cases: s.cases.map((c) => c.id === id ? { ...c, attachments } : c) })),
+      deleteCase: (id) =>
+        set((s) => ({
+          cases: s.cases.filter((item) => item.id !== id),
+          parties: s.parties.filter((item) => item.caseId !== id),
+          deadlines: s.deadlines.filter((item) => item.caseId !== id),
+          timeline: s.timeline.filter((item) => item.caseId !== id),
+          documents: s.documents.filter((item) => item.caseId !== id),
+          notes: s.notes.filter((item) => item.caseId !== id),
+          transactions: s.transactions.filter((item) => item.caseId !== id),
+          petitions: s.petitions.filter((item) => item.caseId !== id),
+          hearings: s.hearings.filter((item) => item.caseId !== id),
+        })),
       addParty: (data) =>
         set((s) => ({
           parties: [{ ...data, id: uid() }, ...s.parties],
@@ -212,9 +239,9 @@ export const useApp = create<AppState>()(
         set((s) => ({
           notes: [{ id: uid(), caseId, body, createdAt: todayJalali() }, ...s.notes],
         })),
-      addDocument: (caseId, title, kind) =>
+      addDocument: (caseId, title, kind, attachment) =>
         set((s) => ({
-          documents: [{ id: uid(), caseId, title, kind, createdAt: todayJalali() }, ...s.documents],
+          documents: [{ id: uid(), caseId, title, kind, createdAt: todayJalali(), attachment }, ...s.documents],
           timeline: [
             {
               id: uid(),
@@ -228,6 +255,8 @@ export const useApp = create<AppState>()(
             ...s.timeline,
           ],
         })),
+      deleteDocument: (id) => set((s) => ({ documents: s.documents.filter((item) => item.id !== id) })),
+      updateDocument: (id, data) => set((s) => ({ documents: s.documents.map((item) => item.id === id ? { ...item, ...data } : item) })),
       addTransaction: (data) =>
         set((s) => ({
           transactions: [{ ...data, id: uid() }, ...s.transactions],
@@ -270,6 +299,8 @@ export const useApp = create<AppState>()(
           hearings: s.hearings.map((h) => (h.id === id ? { ...h, ...data } : h)),
         })),
       addMember: (data) => set((s) => ({ members: [...s.members, { ...data, id: uid() }] })),
+      updateMember: (id, data) => set((s) => ({ members: s.members.map((item) => (item.id === id ? { ...item, ...data } : item)) })),
+      deleteMember: (id) => set((s) => ({ members: s.members.filter((item) => item.id !== id) })),
       markNotice: (id) =>
         set((s) => ({
           notices: s.notices.map((n) => (n.id === id ? { ...n, read: true } : n)),
@@ -280,10 +311,28 @@ export const useApp = create<AppState>()(
         })),
       clearChat: () => set({ chat: [] }),
       updateOffice: (data) => set((s) => ({ office: { ...s.office, ...data } })),
+      restoreBackup: (backup) =>
+        set({
+          office: backup.office,
+          clients: backup.clients,
+          cases: backup.cases,
+          parties: backup.parties,
+          deadlines: backup.deadlines,
+          timeline: backup.timeline,
+          documents: backup.documents,
+          notes: backup.notes,
+          transactions: backup.transactions,
+          petitions: backup.petitions,
+          hearings: backup.hearings,
+          members: backup.members,
+          notices: backup.notices,
+          chat: backup.chat,
+        }),
       resetDemo: () => set({ ...initial }),
     }),
     {
       name: "jurist-assistant-store-v2",
+      storage: createJSONStorage(() => indexedDbStorage),
       partialize: (s) => ({
         user: s.user,
         clients: s.clients,

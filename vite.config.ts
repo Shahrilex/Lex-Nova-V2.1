@@ -150,6 +150,18 @@ export default defineConfig(({ command, isPreview }) => ({
     host: "0.0.0.0",
     port: 8080,
     strictPort: true,
+    // The Windows desktop companion contains WebView/Visual Studio binary
+    // caches that can be locked while it runs. It is built separately, so
+    // excluding it from Vite's source watcher prevents EBUSY and reload loops.
+    watch: {
+      ignored: [
+        "**/artifacts/**",
+        "**/desktop/**",
+        "**/.vercel/**",
+        "**/.vs/**",
+        "**/screenshots/**",
+      ],
+    },
   },
   preview: {
     host: "127.0.0.1",

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import { mkdirSync, readFileSync, realpathSync, statSync, writeFileSync } from "node:fs";
-import { dirname } from "node:path";
+import { existsSync, mkdirSync, readFileSync, realpathSync, statSync, writeFileSync } from "node:fs";
+import { dirname, join } from "node:path";
 import { chromium } from "playwright";
 import { checkedOutputPath, checkedUrl } from "./browser-guard.mjs";
 import { computeBrandWarnings } from "./brand-check.mjs";
@@ -27,10 +27,18 @@ if (args.error) {
 }
 
 const url = checkedUrl(args.url);
-const outPng = checkedOutputPath(args.outPng, ["/workspace"]);
+// App Builder uses `/workspace`; local Windows workspaces use their actual
+// project directory. Keep the sandbox default intact while making the same QA
+// command usable from Visual Studio / PowerShell.
+const allowedOutputDirs = [process.cwd(), "/workspace"];
+const requestedOutPng =
+  process.platform === "win32" && args.outPng.startsWith("/workspace/")
+    ? join(process.cwd(), args.outPng.slice("/workspace/".length))
+    : args.outPng;
+const outPng = checkedOutputPath(requestedOutPng, allowedOutputDirs);
 const derived = derivedPaths(outPng);
-const mobilePng = checkedOutputPath(derived.mobilePng, ["/workspace"]);
-const outJson = checkedOutputPath(derived.verdictJson, ["/workspace"], "verdict JSON");
+const mobilePng = checkedOutputPath(derived.mobilePng, allowedOutputDirs);
+const outJson = checkedOutputPath(derived.verdictJson, allowedOutputDirs, "verdict JSON");
 
 const MAX_BASELINE_BYTES = 1024 * 1024;
 const baselineRequested = Boolean(args.baseline);
@@ -38,7 +46,7 @@ let baselinePath = null;
 let baselineResolveError = null;
 if (baselineRequested) {
   try {
-    baselinePath = checkedOutputPath(realpathSync(args.baseline), ["/workspace"], "baseline");
+    baselinePath = checkedOutputPath(realpathSync(args.baseline), allowedOutputDirs, "baseline");
   } catch (err) {
     baselineResolveError = err?.code ?? "unresolvable path";
   }
@@ -60,6 +68,15 @@ if (baselineRequested) {
 }
 
 const timeoutMs = Number(process.env.BROWSER_SMOKE_TIMEOUT_MS || 45000);
+
+function chromiumExecutablePath() {
+  if (process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH) {
+    return process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH;
+  }
+  if (process.platform !== "win32") return undefined;
+  const systemChrome = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
+  return existsSync(systemChrome) ? systemChrome : undefined;
+}
 
 const VIEWPORTS = [
   { name: "desktop", width: 1280, height: 800, screenshot: outPng },
@@ -92,6 +109,7 @@ let browser = null;
 try {
   browser = await chromium.launch({
     headless: true,
+    executablePath: chromiumExecutablePath(),
     args: ["--no-sandbox", "--disable-dev-shm-usage"],
   });
 
@@ -102,7 +120,10 @@ try {
       viewport: { width: vp.width, height: vp.height },
     });
     page.on("console", (msg) => {
-      if (msg.type() === "error") errors.consoleErrors.push(msg.text());
+      if (msg.type() === "error") {
+        const location = msg.location();
+        errors.consoleErrors.push(location.url ? `${msg.text()} (${location.url})` : msg.text());
+      }
     });
     page.on("pageerror", (err) => errors.pageErrors.push(String(err?.message || err)));
     // `domcontentloaded`, not `networkidle`: Vite keeps an HMR websocket open, so

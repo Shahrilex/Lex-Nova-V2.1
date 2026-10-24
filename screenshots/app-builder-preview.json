@@ -11,9 +11,11 @@
       "bodyTextHash": "5c838076923d553bcd9d65b6fc35a795d809f4cfeb17d28b5deb0b1434386fae",
       "bodyTextPrefix": "Jurist Assistant دستیار حقوقدان · مدیریت دفتر وکالت شماره موبایل",
       "horizontalOverflow": false,
-      "consoleErrors": [],
+      "consoleErrors": [
+        "Failed to load resource: net::ERR_NETWORK_ACCESS_DENIED (https://grok.com/grok-app-builder/extensions.js)"
+      ],
       "pageErrors": [],
-      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+      "screenshot": "D:\\Github\\Lex-Nova-V2.1\\screenshots\\app-builder-preview.png"
     },
     "mobile": {
       "width": 390,
@@ -25,12 +27,16 @@
       "bodyTextHash": "5c838076923d553bcd9d65b6fc35a795d809f4cfeb17d28b5deb0b1434386fae",
       "bodyTextPrefix": "Jurist Assistant دستیار حقوقدان · مدیریت دفتر وکالت شماره موبایل",
       "horizontalOverflow": false,
-      "consoleErrors": [],
+      "consoleErrors": [
+        "Failed to load resource: net::ERR_NETWORK_ACCESS_DENIED (https://grok.com/grok-app-builder/extensions.js)"
+      ],
       "pageErrors": [],
-      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+      "screenshot": "D:\\Github\\Lex-Nova-V2.1\\screenshots\\app-builder-preview-mobile.png"
     }
   },
-  "brandWarnings": [],
+  "brandWarnings": [
+    "BRAND NOTE: no custom public/og.jpg — the platform will serve the og.grok.me placeholder. Custom cards are the default for games of every kind (DOM board/word games included), whimsical apps, creative tools, and brand-forward pages — only plain utilities (converters, CRUD trackers, admin dashboards) keep the placeholder. If this app is not a plain utility, finish the brand-asset pass per \\workspace\\.grok\\skills\\og\\SKILL.md."
+  ],
   "authWarnings": [],
-  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+  "verdictFile": "D:\\Github\\Lex-Nova-V2.1\\screenshots\\app-builder-preview.json"
 }

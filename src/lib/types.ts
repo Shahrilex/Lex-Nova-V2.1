@@ -28,6 +28,8 @@ export type OfficeProfile = {
   barNumber: string;
 };
 
+export type FileAttachment = { id: string; name: string; size: number; type: string; dataUrl: string };
+
 export type Client = {
   id: string;
   fullName: string;
@@ -38,6 +40,7 @@ export type Client = {
   email: string;
   notes: string;
   createdAt: string;
+  attachments?: FileAttachment[];
 };
 
 export type CaseItem = {
@@ -53,6 +56,7 @@ export type CaseItem = {
   openedAt: string;
   claimAmount: string;
   description: string;
+  attachments?: FileAttachment[];
 };
 
 export type Party = {
@@ -92,6 +96,7 @@ export type DocumentItem = {
   title: string;
   kind: string;
   createdAt: string;
+  attachment?: { name: string; size: number; type: string; dataUrl: string };
 };
 
 export type NoteItem = {

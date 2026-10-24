@@ -1,7 +1,14 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/Vazirmatn.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
 @theme {
-  --font-sans: "Vazirmatn", "Tahoma", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Vazirmatn", "B Nazanin", Tahoma, ui-sans-serif, system-ui, sans-serif;
   --color-navy: #0c1e33;
   --color-navy-deep: #081526;
   --color-paper: #f4f1ea;

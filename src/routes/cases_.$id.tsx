@@ -1,7 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
+import { useShallow } from "zustand/react/shallow";
 import { toast } from "sonner";
 import { AppShell } from "@/components/AppShell";
+import { Attachments } from "@/components/Attachments";
 import { DeadlineBadge, StatusBadge } from "@/components/Badges";
 import { caseTypeLabel, partyRoleLabel, statusLabel, txLabel } from "@/lib/seed";
 import { useApp } from "@/lib/store";
@@ -19,24 +21,34 @@ function CaseDetail() {
   const { id } = Route.useParams();
   const caseItem = useApp((s) => s.cases.find((c) => c.id === id));
   const client = useApp((s) => s.clients.find((c) => c.id === caseItem?.clientId));
-  const deadlines = useApp((s) => s.deadlines.filter((d) => d.caseId === id));
-  const timeline = useApp((s) => s.timeline.filter((t) => t.caseId === id));
-  const documents = useApp((s) => s.documents.filter((d) => d.caseId === id));
-  const notes = useApp((s) => s.notes.filter((n) => n.caseId === id));
-  const parties = useApp((s) => s.parties.filter((p) => p.caseId === id));
-  const txs = useApp((s) => s.transactions.filter((t) => t.caseId === id));
-  const hearings = useApp((s) => s.hearings.filter((h) => h.caseId === id));
-  const petitions = useApp((s) => s.petitions.filter((p) => p.caseId === id));
+  const deadlines = useApp(useShallow((s) => s.deadlines.filter((d) => d.caseId === id)));
+  const timeline = useApp(useShallow((s) => s.timeline.filter((t) => t.caseId === id)));
+  const documents = useApp(useShallow((s) => s.documents.filter((d) => d.caseId === id)));
+  const notes = useApp(useShallow((s) => s.notes.filter((n) => n.caseId === id)));
+  const parties = useApp(useShallow((s) => s.parties.filter((p) => p.caseId === id)));
+  const txs = useApp(useShallow((s) => s.transactions.filter((t) => t.caseId === id)));
+  const hearings = useApp(useShallow((s) => s.hearings.filter((h) => h.caseId === id)));
+  const petitions = useApp(useShallow((s) => s.petitions.filter((p) => p.caseId === id)));
   const office = useApp((s) => s.office);
   const addNote = useApp((s) => s.addNote);
   const addTimeline = useApp((s) => s.addTimeline);
   const addDocument = useApp((s) => s.addDocument);
+  const deleteDocument = useApp((s) => s.deleteDocument);
+  const updateDocument = useApp((s) => s.updateDocument);
   const addDeadline = useApp((s) => s.addDeadline);
   const toggleDeadline = useApp((s) => s.toggleDeadline);
   const addParty = useApp((s) => s.addParty);
   const addTransaction = useApp((s) => s.addTransaction);
   const savePetition = useApp((s) => s.savePetition);
   const updateCase = useApp((s) => s.updateCase);
+  const deleteCase = useApp((s) => s.deleteCase);
+  const updateCaseAttachments = useApp((s) => s.updateCaseAttachments);
+  const navigate = useNavigate();
+  const [editingCase, setEditingCase] = useState(false);
+  const [editTitle, setEditTitle] = useState(caseItem?.title ?? "");
+  const [editCourt, setEditCourt] = useState(caseItem?.court ?? "");
+  const [editBranch, setEditBranch] = useState(caseItem?.branch ?? "");
+  const [editDescription, setEditDescription] = useState(caseItem?.description ?? "");
   const updateHearing = useApp((s) => s.updateHearing);
   const [tab, setTab] = useState<Tab>("summary");
   const [note, setNote] = useState("");
@@ -158,6 +170,19 @@ function CaseDetail() {
           </Link>
         </div>
       </div>
+
+      <div className="mb-5 flex flex-wrap gap-2">
+        <button type="button" onClick={() => setEditingCase((value) => !value)} className="h-10 rounded-md border border-line px-4 text-sm">{editingCase ? "بستن ویرایش" : "ویرایش پرونده"}</button>
+        <button type="button" onClick={() => { if (window.confirm(`پرونده «${caseItem.title}» و اطلاعات وابسته حذف شود؟`)) { deleteCase(id); navigate({ to: "/cases" }); } }} className="h-10 rounded-md border border-danger px-4 text-sm text-danger">حذف پرونده</button>
+      </div>
+      {editingCase && <form className="mb-5 grid gap-3 rounded-xl border border-line bg-surface p-4 sm:grid-cols-2" onSubmit={(event) => { event.preventDefault(); updateCase(id, { title: editTitle.trim(), court: editCourt, branch: editBranch, description: editDescription }); setEditingCase(false); toast.success("پرونده به‌روز شد."); }}>
+        <label className="text-sm">عنوان<input required value={editTitle} onChange={(event) => setEditTitle(event.target.value)} className="mt-1 h-11 w-full rounded-md border border-line bg-paper px-3" /></label>
+        <label className="text-sm">مرجع قضایی<input value={editCourt} onChange={(event) => setEditCourt(event.target.value)} className="mt-1 h-11 w-full rounded-md border border-line bg-paper px-3" /></label>
+        <label className="text-sm">شعبه<input value={editBranch} onChange={(event) => setEditBranch(event.target.value)} className="mt-1 h-11 w-full rounded-md border border-line bg-paper px-3" /></label>
+        <label className="text-sm sm:col-span-2">شرح<textarea value={editDescription} onChange={(event) => setEditDescription(event.target.value)} className="mt-1 min-h-24 w-full rounded-md border border-line bg-paper p-3" /></label>
+        <button className="h-11 rounded-md bg-navy px-4 text-sm text-paper sm:col-span-2">ذخیره تغییرات</button>
+      </form>}
+      <div className="mb-5"><Attachments files={caseItem.attachments ?? []} onChange={(attachments) => updateCaseAttachments(id, attachments)} /></div>
 
       <div className="mb-4 flex flex-wrap gap-1 overflow-x-auto border-b border-line">
         {tabs.map((t) => (
@@ -333,8 +358,10 @@ function CaseDetail() {
             {documents.map((d) => (
               <div key={d.id} className="flex justify-between rounded-md border border-line bg-surface px-4 py-3 text-sm">
                 <span>{d.title}</span>
-                <span className="text-muted">
+                <span className="flex items-center gap-3 text-muted">
                   {d.kind} · {d.createdAt}
+                  <button type="button" className="text-navy underline" onClick={() => { const title = window.prompt("عنوان سند", d.title); if (title?.trim()) updateDocument(d.id, { title: title.trim() }); }}>ویرایش</button>
+                  <button type="button" className="text-danger" onClick={() => { if (window.confirm(`سند «${d.title}» حذف شود؟`)) deleteDocument(d.id); }}>حذف</button>
                 </span>
               </div>
             ))}

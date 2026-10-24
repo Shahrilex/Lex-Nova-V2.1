@@ -27,7 +27,7 @@ function AssistantPage() {
   const parties = useApp((s) => s.parties);
   const notes = useApp((s) => s.notes);
   const hearings = useApp((s) => s.hearings);
-  const chat = useApp((s) => s.chat) ?? [];
+  const chat = useApp((s) => s.chat);
   const pushChat = useApp((s) => s.pushChat);
   const clearChat = useApp((s) => s.clearChat);
   const savePetition = useApp((s) => s.savePetition);
