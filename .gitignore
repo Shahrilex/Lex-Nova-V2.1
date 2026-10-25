@@ -11,8 +11,21 @@ $RECYCLE.BIN/
 node_modules/
 .project_id
 .github_repo
+.node_modules.lock
 .env
 .env.*
+
+# Lex Nova generated app-builder and deployment output
+/.tanstack/
+/.vercel/output/
+/.vercel/cache/
+/.vercel/project.json
+/.vercel/README.txt
+
+# Desktop app build output (keep the source project and icon tracked)
+/desktop/LexNova.Desktop/bin/
+/desktop/LexNova.Desktop/obj/
+
 # macOS
 .DS_Store
 .AppleDouble
