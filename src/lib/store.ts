@@ -352,6 +352,8 @@ export const useApp = create<AppState>()(
       }),
       onRehydrateStorage: () => (state) => {
         if (state && !state.office) state.office = seedOffice;
+        // Remove the bundled demo lawyer name from existing local installs too.
+        if (state?.office?.lawyerName === "مهدی رضایی") state.updateOffice({ lawyerName: "" });
         if (state && !state.chat) state.chat = [];
         state?.setHydrated();
       },

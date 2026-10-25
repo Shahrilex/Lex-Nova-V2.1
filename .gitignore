@@ -1,5 +1,187 @@
+# ==============================
+# Operating System Files
+# ==============================
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
 node_modules/
 .project_id
 .github_repo
 .env
 .env.*
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100/
+.Trashes/
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*/
+
+# ==============================
+# Logs and Temporary Files
+# ==============================
+
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+*.swo
+*.orig
+
+# ==============================
+# Environment and Secrets
+# ==============================
+
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+secrets/
+credentials.json
+
+# ==============================
+# IDEs and Editors
+# ==============================
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.cache
+*.opendb
+*.VC.db
+*.VC.VC.opendb
+
+# Visual Studio Code
+.vscode/
+!.vscode/extensions.json
+
+# JetBrains
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Vim
+.*.sw?
+*.swn
+
+# ==============================
+# Build Outputs
+# ==============================
+
+bin/
+obj/
+build/
+dist/
+out/
+publish/
+artifacts/
+
+# ==============================
+# Dependencies and Package Caches
+# ==============================
+
+node_modules/
+vendor/
+.nuget/
+packages/
+.npm/
+.yarn/cache/
+.pnpm-store/
+
+# ==============================
+# Python
+# ==============================
+
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+ENV/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist-info/
+
+# ==============================
+# Node.js
+# ==============================
+
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+.npm/
+
+# ==============================
+# .NET
+# ==============================
+
+TestResults/
+*.pdb
+*.cache
+
+# ==============================
+# Databases and Local Data
+# ==============================
+
+*.sqlite
+*.sqlite3
+*.db
+*.mdf
+*.ldf
+
+# ==============================
+# Coverage and Test Reports
+# ==============================
+
+coverage/
+coverage.xml
+*.lcov
+
+# ==============================
+# Archives and Backups
+# ==============================
+
+*.zip
+*.7z
+*.rar
+*.tar
+*.gz
+*.old
+*.backup
+
+# ==============================
+# Local Configuration
+# ==============================
+
+*.local
+local.settings.json
+
+# ==============================
+# Generated Documentation
+# ==============================
+
+# Uncomment if documentation is generated automatically
+# docs/generated/

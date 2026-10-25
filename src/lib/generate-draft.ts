@@ -20,17 +20,20 @@ export const generateDraft = createServerFn({ method: "POST" })
       .map((s) => `${s.article} — ${s.title}: ${s.summary}`)
       .join("\n");
 
-    const res = await fetch("https://api.x.ai/v1/chat/completions", {
+    const res = await fetch("https://api.x.ai/v1/responses", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model: "grok-4.5",
-        max_tokens: 900,
-        temperature: 0.3,
-        messages: [
+        model: "grok-4.7",
+        max_output_tokens: 1200,
+        reasoning: { effort: "low" },
+        temperature: 0.7,
+        top_p: 0.95,
+        store: false,
+        input: [
           {
             role: "system",
             content:
@@ -44,8 +47,8 @@ export const generateDraft = createServerFn({ method: "POST" })
       }),
     });
     if (!res.ok) return { ok: false as const, error: `xAI API error ${res.status}` };
-    const body = (await res.json()) as { choices?: { message?: { content?: string } }[] };
-    const text = body.choices?.[0]?.message?.content?.trim() ?? "";
+    const body = (await res.json()) as { output_text?: string };
+    const text = body.output_text?.trim() ?? "";
     if (!text) return { ok: false as const, error: "empty" };
     return { ok: true as const, text };
   });

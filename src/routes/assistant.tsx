@@ -4,9 +4,11 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { toast } from "sonner";
 import { AppShell } from "@/components/AppShell";
 import { askCounsel } from "@/lib/counsel";
+import { askDesktopAi, getDesktopBridge } from "@/lib/desktop-bridge";
 import { buildOfficeBrief } from "@/lib/office-brief";
 import { copyText } from "@/lib/print";
 import { useApp } from "@/lib/store";
+import { retrieveSources } from "@/lib/retrieve";
 import { nowTime, uid, cn } from "@/lib/utils";
 
 type Search = { caseId?: string; q?: string };
@@ -107,19 +109,32 @@ function AssistantPage() {
       content: m.content,
     }));
     try {
-      const res = await askCounsel({ data: { query, officeBrief: brief, messages: history } });
-      if (res.ok) {
+      const desktop = getDesktopBridge();
+      let answer: string | undefined;
+      let answerError: string | undefined;
+      let citations: import("@/lib/counsel").CounselCitation[] | undefined;
+      let source: "model" | "library" = "model";
+      if (desktop) {
+        const res = await askDesktopAi({ query, officeBrief: brief, messages: history, sources: retrieveSources(query, 5).map(({ id, title, article, summary }) => ({ id, title, article, summary })) });
+        if (res?.ok) { answer = res.text; citations = res.citations; }
+        else answerError = res?.error ?? "اتصال دسکتاپ در دسترس نیست.";
+      } else {
+        const res = await askCounsel({ data: { query, officeBrief: brief, messages: history } });
+        if (res.ok) { answer = res.text; citations = res.citations; source = res.source; }
+        else answerError = res.error;
+      }
+      if (answer) {
         pushChat({
           id: uid(),
           role: "assistant",
-          content: res.text,
+          content: answer,
           at: nowTime(),
           caseId: nextCase || undefined,
-          citations: res.citations,
-          source: res.source,
+          citations,
+          source,
         });
       } else {
-        setError(res.error);
+        setError(answerError ?? "پاسخ دریافت نشد.");
       }
     } catch {
       setError("ارتباط با دستیار برقرار نشد. دوباره تلاش کنید.");

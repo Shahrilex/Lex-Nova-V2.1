@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LexNova.Desktop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+54d7781968f8f4f31d4c1ed59f5fa1bacac567e0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4a5484e75bc2a63a93e4c405cd6980418cf1a7a0")]
 [assembly: System.Reflection.AssemblyProductAttribute("LexNova.Desktop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LexNova.Desktop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

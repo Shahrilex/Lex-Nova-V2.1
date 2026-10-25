@@ -117,3 +117,123 @@
 2026-10-24 16:34:26.614: [INFO] BookmarksLoadDropped droppedNodes=0
 2026-10-24 16:34:26.614: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
 2026-10-24 16:43:24.910: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-24 17:00:54.660: [INFO] CurrentProfilePath: D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default
+2026-10-24 17:00:54.660: [INFO] Profiles total count: 1
+2026-10-24 17:00:54.661: [INFO] Profile: name=Profile 1 path=D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default lastActive=2026-10-24T16:43:24.790Z
+2026-10-24 17:00:54.661: [INFO] LastUsedProfileDir: D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default
+2026-10-24 17:00:54.661: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default lastActive=2026-10-24T16:43:24.790Z
+2026-10-24 17:00:54.661: [INFO] OnDoneLoading sync enabled: 0
+2026-10-24 17:00:54.661: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-24 17:00:54.661: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-24 17:00:54.661: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-24 17:08:49.899: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-24 17:10:50.186: [INFO] CurrentProfilePath: D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default
+2026-10-24 17:10:50.186: [INFO] Profiles total count: 1
+2026-10-24 17:10:50.186: [INFO] Profile: name=Profile 1 path=D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default lastActive=2026-10-24T17:07:12.894Z
+2026-10-24 17:10:50.186: [INFO] LastUsedProfileDir: D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default
+2026-10-24 17:10:50.186: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default lastActive=2026-10-24T17:07:12.894Z
+2026-10-24 17:10:50.186: [INFO] OnDoneLoading sync enabled: 0
+2026-10-24 17:10:50.186: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-24 17:10:50.186: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-24 17:10:50.186: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-24 17:12:44.434: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-24 17:13:22.635: [INFO] CurrentProfilePath: D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default
+2026-10-24 17:13:22.635: [INFO] Profiles total count: 1
+2026-10-24 17:13:22.635: [INFO] Profile: name=Profile 1 path=D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default lastActive=2026-10-24T17:07:12.894Z
+2026-10-24 17:13:22.635: [INFO] LastUsedProfileDir: D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default
+2026-10-24 17:13:22.635: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default lastActive=2026-10-24T17:07:12.894Z
+2026-10-24 17:13:22.635: [INFO] OnDoneLoading sync enabled: 0
+2026-10-24 17:13:22.635: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-24 17:13:22.635: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-24 17:13:22.635: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-24 17:17:42.665: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-24 17:18:16.457: [INFO] CurrentProfilePath: D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default
+2026-10-24 17:18:16.457: [INFO] Profiles total count: 1
+2026-10-24 17:18:16.457: [INFO] Profile: name=Profile 1 path=D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default lastActive=2026-10-24T17:07:12.894Z
+2026-10-24 17:18:16.457: [INFO] LastUsedProfileDir: D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default
+2026-10-24 17:18:16.457: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default lastActive=2026-10-24T17:07:12.894Z
+2026-10-24 17:18:16.457: [INFO] OnDoneLoading sync enabled: 0
+2026-10-24 17:18:16.457: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-24 17:18:16.457: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-24 17:18:16.457: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-24 17:25:10.810: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-24 17:29:03.748: [INFO] CurrentProfilePath: D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default
+2026-10-24 17:29:03.748: [INFO] Profiles total count: 1
+2026-10-24 17:29:03.748: [INFO] Profile: name=Profile 1 path=D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default lastActive=2026-10-24T17:07:12.894Z
+2026-10-24 17:29:03.748: [INFO] LastUsedProfileDir: D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default
+2026-10-24 17:29:03.748: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default lastActive=2026-10-24T17:07:12.894Z
+2026-10-24 17:29:03.748: [INFO] OnDoneLoading sync enabled: 0
+2026-10-24 17:29:03.748: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-24 17:29:03.748: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-24 17:29:03.748: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-24 17:41:09.770: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-24 17:41:11.726: [INFO] CurrentProfilePath: D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default
+2026-10-24 17:41:11.726: [INFO] Profiles total count: 1
+2026-10-24 17:41:11.726: [INFO] Profile: name=Profile 1 path=D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default lastActive=2026-10-24T17:07:12.894Z
+2026-10-24 17:41:11.726: [INFO] LastUsedProfileDir: D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default
+2026-10-24 17:41:11.726: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default lastActive=2026-10-24T17:07:12.894Z
+2026-10-24 17:41:11.726: [INFO] OnDoneLoading sync enabled: 0
+2026-10-24 17:41:11.726: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-24 17:41:11.726: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-24 17:41:11.726: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-24 17:47:27.051: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-24 18:11:16.936: [INFO] CurrentProfilePath: D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default
+2026-10-24 18:11:16.936: [INFO] Profiles total count: 1
+2026-10-24 18:11:16.938: [INFO] Profile: name=Profile 1 path=D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default lastActive=2026-10-24T17:07:12.894Z
+2026-10-24 18:11:16.938: [INFO] LastUsedProfileDir: D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default
+2026-10-24 18:11:16.938: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default lastActive=2026-10-24T17:07:12.894Z
+2026-10-24 18:11:16.938: [INFO] OnDoneLoading sync enabled: 0
+2026-10-24 18:11:16.938: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-24 18:11:16.938: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-24 18:11:16.938: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-24 18:12:00.859: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-24 18:36:13.714: [INFO] CurrentProfilePath: D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default
+2026-10-24 18:36:13.714: [INFO] Profiles total count: 1
+2026-10-24 18:36:13.715: [INFO] Profile: name=Profile 1 path=D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default lastActive=2026-10-24T18:12:00.762Z
+2026-10-24 18:36:13.715: [INFO] LastUsedProfileDir: D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default
+2026-10-24 18:36:13.715: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default lastActive=2026-10-24T18:12:00.762Z
+2026-10-24 18:36:13.715: [INFO] OnDoneLoading sync enabled: 0
+2026-10-24 18:36:13.715: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-24 18:36:13.715: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-24 18:36:13.715: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-24 18:36:24.952: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-25 08:43:03.239: [INFO] CurrentProfilePath: D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default
+2026-10-25 08:43:03.239: [INFO] Profiles total count: 1
+2026-10-25 08:43:03.240: [INFO] Profile: name=Profile 1 path=D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default lastActive=2026-10-24T18:36:24.852Z
+2026-10-25 08:43:03.240: [INFO] LastUsedProfileDir: D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default
+2026-10-25 08:43:03.240: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default lastActive=2026-10-24T18:36:24.852Z
+2026-10-25 08:43:03.240: [INFO] OnDoneLoading sync enabled: 0
+2026-10-25 08:43:03.240: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-25 08:43:03.240: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-25 08:43:03.240: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-25 08:43:14.353: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-25 08:50:15.708: [INFO] CurrentProfilePath: D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default
+2026-10-25 08:50:15.708: [INFO] Profiles total count: 1
+2026-10-25 08:50:15.709: [INFO] Profile: name=Profile 1 path=D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default lastActive=2026-10-25T08:43:09.586Z
+2026-10-25 08:50:15.709: [INFO] LastUsedProfileDir: D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default
+2026-10-25 08:50:15.709: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default lastActive=2026-10-25T08:43:09.586Z
+2026-10-25 08:50:15.709: [INFO] OnDoneLoading sync enabled: 0
+2026-10-25 08:50:15.709: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-25 08:50:15.709: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-25 08:50:15.709: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-25 08:50:23.998: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-25 08:52:20.627: [INFO] CurrentProfilePath: D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default
+2026-10-25 08:52:20.627: [INFO] Profiles total count: 1
+2026-10-25 08:52:20.628: [INFO] Profile: name=Profile 1 path=D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default lastActive=2026-10-25T08:50:20.738Z
+2026-10-25 08:52:20.628: [INFO] LastUsedProfileDir: D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default
+2026-10-25 08:52:20.628: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default lastActive=2026-10-25T08:50:20.738Z
+2026-10-25 08:52:20.628: [INFO] OnDoneLoading sync enabled: 0
+2026-10-25 08:52:20.628: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-25 08:52:20.628: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-25 08:52:20.628: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-25 09:08:50.689: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-25 09:47:49.153: [INFO] CurrentProfilePath: D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default
+2026-10-25 09:47:49.153: [INFO] Profiles total count: 1
+2026-10-25 09:47:49.153: [INFO] Profile: name=Profile 1 path=D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default lastActive=2026-10-25T09:08:50.302Z
+2026-10-25 09:47:49.153: [INFO] LastUsedProfileDir: D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default
+2026-10-25 09:47:49.153: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=D:\Github\Lex-Nova-V2.1\artifacts\LexNova-Windows\LexNova.Desktop.exe.WebView2\EBWebView\Default lastActive=2026-10-25T09:08:50.302Z
+2026-10-25 09:47:49.153: [INFO] OnDoneLoading sync enabled: 0
+2026-10-25 09:47:49.153: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-25 09:47:49.153: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-25 09:47:49.153: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-25 10:19:40.141: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1

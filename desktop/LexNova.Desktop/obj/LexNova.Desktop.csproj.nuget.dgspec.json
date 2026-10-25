@@ -10,7 +10,7 @@
         "projectUniqueName": "D:\\Github\\Lex-Nova-V2.1\\desktop\\LexNova.Desktop\\LexNova.Desktop.csproj",
         "projectName": "LexNova.Desktop",
         "projectPath": "D:\\Github\\Lex-Nova-V2.1\\desktop\\LexNova.Desktop\\LexNova.Desktop.csproj",
-        "packagesPath": "D:\\Github\\Lex-Nova-V2.1\\artifacts\\.dotnet-home\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\LexNova\\.nuget\\packages\\",
         "outputPath": "D:\\Github\\Lex-Nova-V2.1\\desktop\\LexNova.Desktop\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -60,6 +59,10 @@
             "System.Configuration.ConfigurationManager": {
               "target": "Package",
               "version": "[9.0.0, )"
+            },
+            "System.Security.Cryptography.ProtectedData": {
+              "target": "Package",
+              "version": "[9.0.0, )"
             }
           },
           "imports": [
@@ -73,6 +76,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+              "version": "[8.0.32, 8.0.32]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x64",
+              "version": "[8.0.32, 8.0.32]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+              "version": "[8.0.32, 8.0.32]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"

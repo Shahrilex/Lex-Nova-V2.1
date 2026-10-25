@@ -11,6 +11,7 @@
         "dependencies": {
           "Microsoft.Web.WebView2": "1.0.3065.39",
           "System.Configuration.ConfigurationManager": "9.0.0",
+          "System.Security.Cryptography.ProtectedData": "9.0.0",
           "Microsoft.Web.WebView2.Core": "1.0.3065.39",
           "Microsoft.Web.WebView2.WinForms": "1.0.3065.39",
           "Microsoft.Web.WebView2.Wpf": "1.0.3065.39"

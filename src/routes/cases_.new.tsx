@@ -1,25 +1,27 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { AppShell } from "@/components/AppShell";
+import { LegalMatterPicker } from "@/components/LegalMatterPicker";
 import { useApp } from "@/lib/store";
 import { todayJalali } from "@/lib/utils";
 import type { CaseStatus, CaseType } from "@/lib/types";
 
-type Search = { clientId?: string };
+type Search = { clientId?: string; title?: string };
 
 export const Route = createFileRoute("/cases_/new")({
   component: NewCase,
   validateSearch: (s: Record<string, unknown>): Search => ({
     clientId: typeof s.clientId === "string" ? s.clientId : undefined,
+    title: typeof s.title === "string" ? s.title : undefined,
   }),
 });
 
 function NewCase() {
-  const { clientId: preset } = Route.useSearch();
+  const { clientId: preset, title: presetTitle } = Route.useSearch();
   const clients = useApp((s) => s.clients);
   const addCase = useApp((s) => s.addCase);
   const navigate = useNavigate();
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = useState(presetTitle ?? "");
   const [clientId, setClientId] = useState(preset ?? "");
   const [caseType, setCaseType] = useState<CaseType>("civil");
   const [court, setCourt] = useState("");
@@ -55,14 +57,9 @@ function NewCase() {
       </Link>
       <h1 className="mb-5 text-2xl font-semibold text-navy">تشکیل پرونده جدید</h1>
       <form onSubmit={submit} className="max-w-xl space-y-4 rounded-lg border border-line bg-surface p-5">
-        <label className="block text-sm font-medium">
-          عنوان *
-          <input
-            required
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            className="mt-1 h-11 w-full rounded-md border border-line bg-paper px-3 text-sm outline-none focus:border-navy"
-          />
+        <label htmlFor="case-title" className="block text-sm font-medium">
+          عنوان، خواسته یا موضوع شکایت/پرونده *
+          <LegalMatterPicker id="case-title" value={title} onChange={setTitle} required className="mt-1 bg-paper" />
         </label>
         <label className="block text-sm font-medium">
           موکل *

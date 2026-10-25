@@ -9,6 +9,8 @@ import { caseTypeLabel, partyRoleLabel, statusLabel, txLabel } from "@/lib/seed"
 import { useApp } from "@/lib/store";
 import { draftPetition } from "@/lib/ai-draft";
 import { generateDraft } from "@/lib/generate-draft";
+import { askDesktopAi, getDesktopBridge } from "@/lib/desktop-bridge";
+import { retrieveSources } from "@/lib/retrieve";
 import { copyText, printLegalDoc } from "@/lib/print";
 import { money, parseAmount, todayJalali } from "@/lib/utils";
 import type { CaseStatus, PartyRole, TxType } from "@/lib/types";
@@ -568,8 +570,16 @@ function CaseDetail() {
                     `شرح: ${caseItem.description}`,
                   ].join("\n");
                   try {
-                    const res = await generateDraft({ data: { kind, facts } });
-                    if (res.ok) {
+                    const desktop = getDesktopBridge();
+                    const res = desktop
+                      ? await askDesktopAi({
+                          query: `یک پیش‌نویس ${kind === "petition" ? "دادخواست" : kind === "defense" ? "لایحه دفاعیه" : "تجدیدنظرخواهی"} بر اساس اطلاعات پرونده تهیه کن. موارد مجهول را با جای خالی مشخص کن و هیچ واقعیت یا استناد قانونی نساز.`,
+                          officeBrief: facts,
+                          messages: [],
+                          sources: retrieveSources(`${kind}\n${facts}`, 4).map(({ id, title, article, summary }) => ({ id, title, article, summary })),
+                        })
+                      : await generateDraft({ data: { kind, facts } });
+                    if (res?.ok) {
                       setDraft(res.text);
                       setAiHint("متن با مدل هوشمند تولید شد.");
                     } else {
