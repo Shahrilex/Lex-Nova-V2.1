@@ -1,0 +1,5 @@
+- Project name: Jurist Assistant (دستیار حقوقدان)
+- Product: Legal practice management software for Iranian lawyers, law firms, judicial experts
+- Versions: Free / Pro / Ultra Pro
+- Current status: Interactive RTL prototype with office dashboard, clients, cases, Jalali deadlines engine, petition editor, finance/trust, conflict check, and AI legal counsel chat (xAI grok-4.5 with library fallback + RAG citations). Auth/db off; localStorage zustand demo data.
+- Key differentiators: Iranian legal deadlines engine, AI counsel with case context, trust accounting
